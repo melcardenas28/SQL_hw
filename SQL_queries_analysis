@@ -79,11 +79,25 @@ WHERE	e.first_name = 'Hercules'
 ;
 
 -- 6.List all employees in the Sales department, including their employee number, last name, first name, and department name.
+CREATE VIEW Q6_7 AS  
+			(SELECT
+					emp_no
+					,last_name
+					,first_name
+					,dept_name
 
+			FROM	all_dept_emp)
+;
+
+SELECT * FROM Q6_7
+WHERE	dept_name = 'Sales'
+;
 
 
 -- 7.List all employees in the Sales and Development departments, including their employee number, last name, first name, and department name.*/
-
+SELECT * FROM Q6_7
+WHERE	dept_name IN ('Sales', 'Development')
+;
 
 ---8.In descending order, list the frequency count of employee last names, i.e., how many employees share each last name.
 
